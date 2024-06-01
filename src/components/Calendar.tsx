@@ -24,6 +24,14 @@ interface PropTypes extends HeaderProps {
 const Calendar = ({ buttonPrevIcon, buttonNextIcon, height }: PropTypes) => {
   const { calendarView } = useCalendarContext();
 
+  const {
+    fullDaysInMonth
+  } = getDaysInMonth(currentDate, displayFullDays, firstDayOfWeek);
+
+  if(!height){
+    height = fullDaysInMonth === 42 ? CALENDAR_HEIGHT : (CALENDAR_HEIGHT - CALENDAR_HEIGHT/7);
+  }
+
   const styles = StyleSheet.create({
     container: {
       width: '100%',
