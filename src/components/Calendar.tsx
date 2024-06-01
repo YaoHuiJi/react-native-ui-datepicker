@@ -23,7 +23,7 @@ interface PropTypes extends HeaderProps {
 }
 
 const Calendar = ({ buttonPrevIcon, buttonNextIcon, height }: PropTypes) => {
-  const { calendarView } = useCalendarContext();
+  const { calendarView, currentDate, displayFullDays, firstDayOfWeek } = useCalendarContext();
 
   const {
     fullDaysInMonth
